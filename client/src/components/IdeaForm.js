@@ -11,7 +11,7 @@ class IdeaForm {
     this._form.addEventListener("submit", this.handleSubmit.bind(this));
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
 
     if (
@@ -33,7 +33,7 @@ class IdeaForm {
     };
 
     // Add idea to server
-    const newIdea = IdeasApi.createIdea(idea);
+    const newIdea = await IdeasApi.createIdea(idea);
 
     // Add idea to list
     this._ideaList.addIdeaToList(newIdea.data.data);
