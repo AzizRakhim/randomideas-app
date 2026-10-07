@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
 // Update idea
 router.put("/:id", async (req, res) => {
   try {
-    const idea = Idea.findById(req.params.id);
+    const idea = await Idea.findById(req.params.id);
 
     // Match the usernames
     if (idea.username === req.body.username) {
@@ -75,7 +75,7 @@ router.put("/:id", async (req, res) => {
 // Delete idea
 router.delete("/:id", async (req, res) => {
   try {
-    const idea = Idea.findById(req.params.id);
+    const idea = await Idea.findById(req.params.id);
 
     // Match the usernames
     if (idea.username === req.body.username) {
