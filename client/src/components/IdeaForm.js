@@ -34,12 +34,12 @@ class IdeaForm {
 
     // Add idea to server
     const newIdea = await IdeasApi.createIdea(idea);
-
+    console.log(newIdea);
     // Add idea to list
     this._ideaList.addIdeaToList(newIdea.data.data);
 
     // Clear fields
-    this.this._form.elements.text.value = "";
+    this._form.elements.text.value = "";
     this._form.elements.tag.value = "";
     this._form.elements.username.value = "";
 
